@@ -1,0 +1,86 @@
+{
+  "persona_id": "persona-08",
+  "persona_name": "Elena V.",
+  "tension_type": "unresolved factual/identity contradiction",
+  "sessions": [
+    {
+      "session_id": "session_1",
+      "date": "2026-01-10",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Long shift today, one of my patients had a rough night. Nursing during flu season is no joke."
+        },
+        {
+          "speaker": "assistant",
+          "text": "That sounds exhausting. Hope you get some rest."
+        },
+        {
+          "speaker": "user",
+          "text": "Thanks, I will. Back on the floor again tomorrow at 7am."
+        }
+      ]
+    },
+    {
+      "session_id": "session_2",
+      "date": "2026-03-02",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Client wants three logo concepts by Friday, and honestly I haven't even started sketching yet."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Tight timeline \u2014 want help brainstorming initial concepts to get you started?"
+        },
+        {
+          "speaker": "user",
+          "text": "Yes please, that would help a lot."
+        },
+        { 
+          "speaker": "user", 
+          "text": "Oh, also — I switched my phone number recently, it's 555-0142 now if you ever need to text me the design files." 
+        },
+        { 
+          "speaker": "assistant", 
+          "text": "Got it, updated your contact number to 555-0142." 
+        }
+      ]
+    },
+    {
+      "session_id": "session_3",
+      "date": "2026-04-05",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "What do you know about my work schedule and job?"
+        },
+        {
+          "speaker": "assistant",
+          "text": "PLACEHOLDER_RESPONSE_TO_EVALUATE"
+        }
+      ]
+    }
+  ],
+  "probe_queries": [
+    "What is Elena's job?",
+    "What do you know about Elena's work schedule and job?",
+    "Does Elena work in healthcare or design?"
+  ],
+  "needle_probes": [
+  {
+    "question": "What is Elena's phone number?", 
+    "expected_answer": "555-0142"
+  }
+  ],
+  "annotation": {
+    "tension": "Session 1 clearly describes nursing shift work. Session 2 clearly describes freelance graphic design client work. Neither mentions the other or a career change \u2014 both are stated with full confidence as ongoing present-tense work.",
+    "why_unresolved": "This could be two jobs (a nurse who freelances in design on the side), a career change never narrated, or genuinely inconsistent data. Nothing in the transcript disambiguates it.",
+    "good_response_looks_like": "Mentioning both lines of work if directly relevant, or asking which context applies rather than defaulting to only one and discarding the other.",
+    "failure_modes_to_watch_for": [
+      "Confidently describes Elena as only a nurse, dropping the design work entirely.",
+      "Confidently describes Elena as only a graphic designer, dropping the nursing work entirely.",
+      "Fabricates a narrative reconciling the two that the user never gave (e.g., 'Elena left nursing to become a designer')."
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "persona_id": "persona-03",
+  "persona_name": "Jordan T.",
+  "tension_type": "genuine opinion change (not a factual contradiction)",
+  "sessions": [
+    {
+      "session_id": "session_1",
+      "date": "2026-01-12",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Our office just switched to an open floor plan and honestly I love it. So much easier to just turn around and ask a teammate something."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Glad it's working well for you! Open layouts can really help with quick collaboration."
+        },
+        {
+          "speaker": "user",
+          "text": "Yeah, way better than the old cubicle setup."
+        },
+        {
+          "speaker": "user",
+          "text": "Unrelated, but I finally adopted a cat -- her name is Mochi."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Congrats! Mochi is a great name."
+        }
+      ]
+    },
+    {
+      "session_id": "session_2",
+      "date": "2026-04-08",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "I can't focus at all lately. The open office is so loud, I end up wearing headphones all day just to get anything done."
+        },
+        {
+          "speaker": "assistant",
+          "text": "That's a tough shift. Has it always been this noisy, or has it gotten worse recently?"
+        },
+        {
+          "speaker": "user",
+          "text": "Honestly it's been building for months. I think I just don't like open offices anymore, if I'm being honest with myself."
+        }
+      ]
+    },
+    {
+      "session_id": "session_3",
+      "date": "2026-04-22",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "How do I feel about our office layout, in your notes?"
+        },
+        {
+          "speaker": "assistant",
+          "text": "PLACEHOLDER_RESPONSE_TO_EVALUATE"
+        }
+      ]
+    }
+  ],
+  "probe_queries": [
+    "How does Jordan feel about the open office layout?",
+    "Does Jordan prefer open or closed office layouts?"
+  ],
+  "needle_probes": [
+    {
+      "question": "What is the name of Jordan's cat?",
+      "expected_answer": "Mochi"
+    }
+  ],
+  "annotation": {
+    "tension": "This one is NOT a factual contradiction — it's a legitimate opinion change over three months, explicitly acknowledged by the user in session 2. It's included as a contrast case to the unresolved contradictions above.",
+    "why_unresolved": "It's actually resolved (the user tells you their opinion changed), but the resolution isn't a single dated 'correction' document like the deterministic set — it's inferred from tone and an offhand admission ('if I'm being honest with myself'), which is a different kind of resolution signal than the deterministic set's explicit memos.",
+    "good_response_looks_like": "Reporting the current (negative) opinion as primary, while being able to mention the shift if asked for history ('used to like it, has soured on it since around spring').",
+    "failure_modes_to_watch_for": [
+      "Reports only the session-1 positive opinion (stale/outdated recall).",
+      "Reports both opinions as equally current/unresolved as if this were a genuine ongoing contradiction, missing the explicit acknowledgment of change.",
+      "Fabricates a specific reason for the change that the user didn't give (e.g., 'because of a specific coworker complaint')."
+    ]
+  }
+}

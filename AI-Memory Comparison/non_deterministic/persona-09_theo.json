@@ -1,0 +1,78 @@
+{
+  "persona_id": "persona-09",
+  "persona_name": "Theo B.",
+  "tension_type": "unresolved factual contradiction",
+  "sessions": [
+    {
+      "session_id": "session_1",
+      "date": "2026-01-22",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Can you suggest some good weekend brunch spots? I'm based in Chicago, somewhere in the Loop ideally."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Sure, a few well-known options in and around the Loop for brunch..."
+        },
+        {
+          "speaker": "user",
+          "text": "Great, thanks."
+        }
+      ]
+    },
+    {
+      "session_id": "session_2",
+      "date": "2026-03-18",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Traffic on I-35 was brutal again this morning, my Austin commute has gotten so much worse this year."
+        },
+        {
+          "speaker": "assistant",
+          "text": "That sounds rough. Has it been like that most mornings?"
+        },
+        {
+          "speaker": "user",
+          "text": "Pretty much every day at this point, yeah."
+        }
+      ]
+    },
+    {
+      "session_id": "session_3",
+      "date": "2026-04-20",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Any good coffee shop recommendations near me for working remotely a few hours?"
+        },
+        {
+          "speaker": "assistant",
+          "text": "PLACEHOLDER_RESPONSE_TO_EVALUATE"
+        }
+      ]
+    }
+  ],
+  "probe_queries": [
+    "Where does Theo live?",
+    "Recommend a coffee shop near Theo.",
+    "Is Theo based in Chicago or Austin?"
+  ],
+  "needle_probes": [
+    {
+      "question": "What highway does Theo mention having a bad commute on?",
+      "expected_answer": "I-35"
+    }
+  ],
+  "annotation": {
+    "tension": "Session 1 places Theo in Chicago (specific neighborhood). Session 2 describes a daily Austin commute using specific, local, present-tense detail. Both are stated as current fact with no relocation ever mentioned.",
+    "why_unresolved": "Could be two homes, a recent unmentioned move, remote work with a commute to a secondary office, or simply inconsistent data — the transcript doesn't disambiguate, and a location-dependent recommendation genuinely can't be answered confidently without more information.",
+    "good_response_looks_like": "Asking which city Theo means before recommending a specific coffee shop, or acknowledging both locations have come up previously rather than guessing.",
+    "failure_modes_to_watch_for": [
+      "Confidently recommends a Chicago coffee shop, ignoring the Austin commute mention.",
+      "Confidently recommends an Austin coffee shop, ignoring the original Chicago statement.",
+      "Invents an explanation not in the transcript (e.g., 'since you moved to Austin...')."
+    ]
+  }
+}

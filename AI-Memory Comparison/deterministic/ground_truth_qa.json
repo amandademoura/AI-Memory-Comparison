@@ -1,0 +1,369 @@
+[
+  {
+    "id": "det-001",
+    "fact_id": "nova_lead",
+    "type": "as_of",
+    "question": "Who leads Team Nova as of 2024-06-01?",
+    "query_date": "2024-06-01",
+    "expected_answer": "Alice Chen",
+    "change_type_in_effect": "initial",
+    "resolution_rule": "Only one value exists yet; no conflict to resolve.",
+    "source_doc": "02_announcement_nova_lead_2024-01.md",
+    "note": "Alice Chen appointed as founding lead of Team Nova."
+  },
+  {
+    "id": "det-002",
+    "fact_id": "nova_lead",
+    "type": "as_of",
+    "question": "Who leads Team Nova as of 2025-06-01?",
+    "query_date": "2025-06-01",
+    "expected_answer": "Bob Okafor",
+    "change_type_in_effect": "update",
+    "resolution_rule": "A later, explicitly dated statement supersedes the earlier one. Correct answer = most recent value as of the query date.",
+    "source_doc": "04_reorg_memo_2025-03.md",
+    "note": "Reorg memo explicitly states Bob Okafor succeeds Alice Chen as Team Nova lead; Alice Chen moves to Principal Engineer (individual contributor, no direct reports)."
+  },
+  {
+    "id": "det-003",
+    "fact_id": "nova_lead",
+    "type": "current_undated",
+    "question": "Who leads Team Nova?",
+    "query_date": null,
+    "expected_answer": "Bob Okafor",
+    "change_type_in_effect": "update",
+    "resolution_rule": "For undated queries, correct behavior is to return the most recent explicitly-dated fact, UNLESS the fact_id's latest entry is a clarifying_addition (navkit_battery_life), in which case both values must be surfaced rather than treated as a contradiction.",
+    "source_doc": "04_reorg_memo_2025-03.md",
+    "note": "Reorg memo explicitly states Bob Okafor succeeds Alice Chen as Team Nova lead; Alice Chen moves to Principal Engineer (individual contributor, no direct reports)."
+  },
+  {
+    "id": "det-004",
+    "fact_id": "forge_lead",
+    "type": "as_of",
+    "question": "Who leads Team Forge as of 2024-03-01?",
+    "query_date": "2024-03-01",
+    "expected_answer": "Sofia Kappler",
+    "change_type_in_effect": "initial",
+    "resolution_rule": "Only one value exists yet; no conflict to resolve.",
+    "source_doc": "01_employee_handbook_v1_2023-01.md",
+    "note": "Listed as Team Forge lead in original handbook org chart."
+  },
+  {
+    "id": "det-005",
+    "fact_id": "forge_lead",
+    "type": "as_of",
+    "question": "Who leads Team Forge as of 2025-01-01?",
+    "query_date": "2025-01-01",
+    "expected_answer": "Derek Osei",
+    "change_type_in_effect": "update",
+    "resolution_rule": "A later, explicitly dated statement supersedes the earlier one. Correct answer = most recent value as of the query date.",
+    "source_doc": "07_forge_incident_report_2024-09.md",
+    "note": "Following the S1 payload incident review, Derek Osei was named Team Forge lead; Sofia Kappler moved to Quality Systems Advisor."
+  },
+  {
+    "id": "det-006",
+    "fact_id": "forge_lead",
+    "type": "current_undated",
+    "question": "Who leads Team Forge?",
+    "query_date": null,
+    "expected_answer": "Derek Osei",
+    "change_type_in_effect": "update",
+    "resolution_rule": "For undated queries, correct behavior is to return the most recent explicitly-dated fact, UNLESS the fact_id's latest entry is a clarifying_addition (navkit_battery_life), in which case both values must be surfaced rather than treated as a contradiction.",
+    "source_doc": "07_forge_incident_report_2024-09.md",
+    "note": "Following the S1 payload incident review, Derek Osei was named Team Forge lead; Sofia Kappler moved to Quality Systems Advisor."
+  },
+  {
+    "id": "det-007",
+    "fact_id": "s1_max_payload",
+    "type": "as_of",
+    "question": "What is the maximum payload of the Solvane S1 as of 2023-06-01?",
+    "query_date": "2023-06-01",
+    "expected_answer": "5 kg",
+    "change_type_in_effect": "initial",
+    "resolution_rule": "Only one value exists yet; no conflict to resolve.",
+    "source_doc": "03_product_launch_s1_2023-02.md",
+    "note": "Original launch spec sheet."
+  },
+  {
+    "id": "det-008",
+    "fact_id": "s1_max_payload",
+    "type": "as_of",
+    "question": "What is the maximum payload of the Solvane S1 as of 2024-08-01?",
+    "query_date": "2024-08-01",
+    "expected_answer": "7 kg",
+    "change_type_in_effect": "update",
+    "resolution_rule": "A later, explicitly dated statement supersedes the earlier one. Correct answer = most recent value as of the query date.",
+    "source_doc": "05_product_update_s1_v2_2024-06.md",
+    "note": "Hardware revision v2 spec sheet states 7 kg max payload."
+  },
+  {
+    "id": "det-009",
+    "fact_id": "s1_max_payload",
+    "type": "as_of",
+    "question": "What is the maximum payload of the Solvane S1 as of 2025-06-01?",
+    "query_date": "2025-06-01",
+    "expected_answer": "6 kg",
+    "change_type_in_effect": "correction",
+    "resolution_rule": "A later document explicitly corrects/replaces a specific earlier document (not all earlier history) \u2014 check which prior value is actually being corrected.",
+    "source_doc": "06_errata_s1_v2_2024-11.md",
+    "note": "Errata notice: the 7 kg figure was measured under lab-only conditions; real-world rated payload for v2 is corrected to 6 kg. This explicitly supersedes the June 2024 spec sheet, not the original 2023 launch spec."
+  },
+  {
+    "id": "det-010",
+    "fact_id": "s1_max_payload",
+    "type": "current_undated",
+    "question": "What is the maximum payload of the Solvane S1?",
+    "query_date": null,
+    "expected_answer": "6 kg",
+    "change_type_in_effect": "correction",
+    "resolution_rule": "For undated queries, correct behavior is to return the most recent explicitly-dated fact, UNLESS the fact_id's latest entry is a clarifying_addition (navkit_battery_life), in which case both values must be surfaced rather than treated as a contradiction.",
+    "source_doc": "06_errata_s1_v2_2024-11.md",
+    "note": "Errata notice: the 7 kg figure was measured under lab-only conditions; real-world rated payload for v2 is corrected to 6 kg. This explicitly supersedes the June 2024 spec sheet, not the original 2023 launch spec."
+  },
+  {
+    "id": "det-011",
+    "fact_id": "vision_suite_pricing",
+    "type": "as_of",
+    "question": "What is the pricing for Solvane Vision Suite as of 2024-01-01?",
+    "query_date": "2024-01-01",
+    "expected_answer": "$499/month flat, individual license",
+    "change_type_in_effect": "initial",
+    "resolution_rule": "Only one value exists yet; no conflict to resolve.",
+    "source_doc": "09_vision_suite_pricing_2023-05.md",
+    "note": "Original standard-tier pricing."
+  },
+  {
+    "id": "det-012",
+    "fact_id": "vision_suite_pricing",
+    "type": "as_of",
+    "question": "What is the pricing for Solvane Vision Suite as of 2025-06-01?",
+    "query_date": "2025-06-01",
+    "expected_answer": "$150/seat/month, per-seat license",
+    "change_type_in_effect": "update",
+    "resolution_rule": "A later, explicitly dated statement supersedes the earlier one. Correct answer = most recent value as of the query date.",
+    "source_doc": "10_vision_suite_pricing_update_2025-01.md",
+    "note": "Announcement explicitly discontinues the flat individual tier in favor of per-seat pricing."
+  },
+  {
+    "id": "det-013",
+    "fact_id": "vision_suite_pricing",
+    "type": "current_undated",
+    "question": "What is the pricing for Solvane Vision Suite?",
+    "query_date": null,
+    "expected_answer": "$150/seat/month, per-seat license (individual tier discontinued)",
+    "change_type_in_effect": "update",
+    "resolution_rule": "For undated queries, correct behavior is to return the most recent explicitly-dated fact, UNLESS the fact_id's latest entry is a clarifying_addition (navkit_battery_life), in which case both values must be surfaced rather than treated as a contradiction.",
+    "source_doc": "10_vision_suite_pricing_update_2025-01.md",
+    "note": "Announcement explicitly discontinues the flat individual tier in favor of per-seat pricing."
+  },
+  {
+    "id": "det-014",
+    "fact_id": "remote_work_policy",
+    "type": "as_of",
+    "question": "What is Solvane's remote work policy as of 2024-01-01?",
+    "query_date": "2024-01-01",
+    "expected_answer": "Fully remote, no in-office requirement",
+    "change_type_in_effect": "initial",
+    "resolution_rule": "Only one value exists yet; no conflict to resolve.",
+    "source_doc": "01_employee_handbook_v1_2023-01.md",
+    "note": "Original handbook section 4.2."
+  },
+  {
+    "id": "det-015",
+    "fact_id": "remote_work_policy",
+    "type": "as_of",
+    "question": "What is Solvane's remote work policy as of 2025-06-01?",
+    "query_date": "2025-06-01",
+    "expected_answer": "Hybrid: 3 days/week in office (Tue/Wed/Thu)",
+    "change_type_in_effect": "update",
+    "resolution_rule": "A later, explicitly dated statement supersedes the earlier one. Correct answer = most recent value as of the query date.",
+    "source_doc": "11_handbook_update_hybrid_2025-02.md",
+    "note": "Handbook update explicitly states this section supersedes handbook section 4.2 from the 2023 edition."
+  },
+  {
+    "id": "det-016",
+    "fact_id": "remote_work_policy",
+    "type": "current_undated",
+    "question": "What is Solvane's remote work policy?",
+    "query_date": null,
+    "expected_answer": "Hybrid: 3 days/week in office (Tue/Wed/Thu)",
+    "change_type_in_effect": "update",
+    "resolution_rule": "For undated queries, correct behavior is to return the most recent explicitly-dated fact, UNLESS the fact_id's latest entry is a clarifying_addition (navkit_battery_life), in which case both values must be surfaced rather than treated as a contradiction.",
+    "source_doc": "11_handbook_update_hybrid_2025-02.md",
+    "note": "Handbook update explicitly states this section supersedes handbook section 4.2 from the 2023 edition."
+  },
+  {
+    "id": "det-017",
+    "fact_id": "meal_expense_cap",
+    "type": "as_of",
+    "question": "What is the daily meal expense reimbursement cap as of 2024-01-01?",
+    "query_date": "2024-01-01",
+    "expected_answer": "$50/day",
+    "change_type_in_effect": "initial",
+    "resolution_rule": "Only one value exists yet; no conflict to resolve.",
+    "source_doc": "01_employee_handbook_v1_2023-01.md",
+    "note": "Original handbook section 7.1."
+  },
+  {
+    "id": "det-018",
+    "fact_id": "meal_expense_cap",
+    "type": "as_of",
+    "question": "What is the daily meal expense reimbursement cap as of 2025-12-01?",
+    "query_date": "2025-12-01",
+    "expected_answer": "$75/day",
+    "change_type_in_effect": "update",
+    "resolution_rule": "A later, explicitly dated statement supersedes the earlier one. Correct answer = most recent value as of the query date.",
+    "source_doc": "12_expense_policy_memo_2025-08.md",
+    "note": "Finance memo raises the cap, effective the date of the memo."
+  },
+  {
+    "id": "det-019",
+    "fact_id": "meal_expense_cap",
+    "type": "current_undated",
+    "question": "What is the daily meal expense reimbursement cap?",
+    "query_date": null,
+    "expected_answer": "$75/day",
+    "change_type_in_effect": "update",
+    "resolution_rule": "For undated queries, correct behavior is to return the most recent explicitly-dated fact, UNLESS the fact_id's latest entry is a clarifying_addition (navkit_battery_life), in which case both values must be surfaced rather than treated as a contradiction.",
+    "source_doc": "12_expense_policy_memo_2025-08.md",
+    "note": "Finance memo raises the cap, effective the date of the memo."
+  },
+  {
+    "id": "det-020",
+    "fact_id": "navkit_battery_life",
+    "type": "as_of",
+    "question": "What is the battery life of the Solvane Nav Kit as of 2025-06-01?",
+    "query_date": "2025-06-01",
+    "expected_answer": "8 hours standard mode; up to 10 hours in eco mode (both true, different modes)",
+    "change_type_in_effect": "clarifying_addition",
+    "resolution_rule": "The later statement does NOT supersede the earlier one \u2014 both are simultaneously true (different conditions/modes). Correct answer includes both values; treating this as a contradiction is itself the failure mode being tested.",
+    "source_doc": "08_navkit_field_report_2024-10.md",
+    "note": "Field report adds a new eco mode figure. This is a trap: it is easy to misread as contradicting the 8-hour spec, but it does not supersede it \u2014 both figures are simultaneously true for different modes."
+  },
+  {
+    "id": "det-021",
+    "fact_id": "navkit_battery_life",
+    "type": "current_undated",
+    "question": "What is the battery life of the Solvane Nav Kit?",
+    "query_date": null,
+    "expected_answer": "Both values are current and true simultaneously (8h standard mode; up to 10h eco mode) \u2014 there is no single 'most recent supersedes all' answer here.",
+    "change_type_in_effect": "clarifying_addition",
+    "resolution_rule": "For undated queries, correct behavior is to return the most recent explicitly-dated fact, UNLESS the fact_id's latest entry is a clarifying_addition (navkit_battery_life), in which case both values must be surfaced rather than treated as a contradiction.",
+    "source_doc": "08_navkit_field_report_2024-10.md",
+    "note": "Field report adds a new eco mode figure. This is a trap: it is easy to misread as contradicting the 8-hour spec, but it does not supersede it \u2014 both figures are simultaneously true for different modes."
+  },
+  {
+    "id": "det-mh-001",
+    "type": "multi_hop",
+    "question": "Who reviewed the S1 payload issue that led to a leadership change, and what is the corrected payload rating that came out of it?",
+    "expected_answer": "Derek Osei led the Team Forge review (becoming Team Forge lead as a result, per the Sept 2024 incident report); the corrected S1 v2 payload rating is 6 kg (per the Nov 2024 errata).",
+    "requires_facts": [
+      "forge_lead",
+      "s1_max_payload"
+    ],
+    "resolution_rule": "Requires connecting two documents (07_forge_incident_report + 06_errata) that reference the same underlying event without either document containing the full answer alone.",
+    "source_docs": [
+      "07_forge_incident_report_2024-09.md",
+      "06_errata_s1_v2_2024-11.md"
+    ]
+  },
+  {
+    "id": "det-mh-002",
+    "type": "multi_hop",
+    "question": "As of mid-2025, is Alice Chen still the point of contact for Team Nova? If not, why not and who is?",
+    "expected_answer": "No \u2014 as of March 2025, Bob Okafor is Team Nova lead. Alice Chen moved to a Principal Engineer (individual contributor) role with no direct reports.",
+    "requires_facts": [
+      "nova_lead"
+    ],
+    "resolution_rule": "Tests whether the provider retains the *reason* for a change (role transition), not just the new value, and doesn't keep surfacing Alice as a contact point due to her frequent appearance in earlier/other documents (e.g., the 2024-04 org snapshot, the all-hands notes).",
+    "source_docs": [
+      "04_reorg_memo_2025-03.md"
+    ]
+  },
+  {
+    "id": "det-mh-003",
+    "type": "distractor_check",
+    "question": "According to the April 2024 org snapshot, who leads Team Forge \u2014 and is that still accurate?",
+    "expected_answer": "The April 2024 snapshot lists Sofia Kappler as Team Forge lead, which was accurate at that time but is now stale \u2014 Derek Osei became lead in September 2024.",
+    "requires_facts": [
+      "forge_lead"
+    ],
+    "resolution_rule": "Tests whether the provider treats an old snapshot document as if it were current, versus correctly flagging it as dated/superseded.",
+    "source_docs": [
+      "14_org_snapshot_2024-04.md",
+      "07_forge_incident_report_2024-09.md"
+    ]
+  },
+   {
+    "id": "det-mh-004",
+    "type": "multi_hop",
+    "question": "Alice Chen and Sofia Kappler both stepped down as team leads. What new roles did each move into, and what prompted each transition?",
+    "expected_answer": "Alice Chen moved to Principal Engineer, an individual-contributor role with no direct reports, as part of a scheduled leadership reorg (Bob Okafor succeeding her) -- not tied to any incident. Sofia Kappler moved to a newly created Quality Systems Advisor role, specifically prompted by the Team Forge review following S1 payload field reports. The two transitions had different causes: routine reorg for Alice, incident-driven review for Sofia.",
+    "requires_facts": [
+      "nova_lead",
+      "forge_lead"
+    ],
+    "resolution_rule": "Requires connecting two separate documents (04_reorg_memo, 07_forge_incident_report) describing two parallel but causally distinct leadership transitions; tests whether the provider conflates the reorg-driven change with the incident-driven one.",
+    "source_docs": [
+      "04_reorg_memo_2025-03.md",
+      "07_forge_incident_report_2024-09.md"
+    ]
+  },
+  {
+    "id": "det-mh-005",
+    "type": "multi_hop",
+    "question": "Does the November 2024 S1 payload correction to 6 kg apply to units running the original 2023 v1.0 hardware?",
+    "expected_answer": "No. The errata explicitly corrects only the June 2024 v2.0 spec sheet's 7 kg figure; it does not affect the original 2023 v1.0 spec sheet, which remains rated at 5 kg.",
+    "requires_facts": [
+      "s1_max_payload"
+    ],
+    "resolution_rule": "Requires connecting three documents (03_product_launch_s1 [5 kg, v1.0], 05_product_update_s1_v2 [7 kg, v2.0], 06_errata [corrects v2 only, to 6 kg]) and recognizing the correction is scoped to v2 hardware only, not applied retroactively to v1.",
+    "source_docs": [
+      "03_product_launch_s1_2023-02.md",
+      "05_product_update_s1_v2_2024-06.md",
+      "06_errata_s1_v2_2024-11.md"
+    ]
+  },
+  {
+    "id": "det-mh-006",
+    "type": "distractor_check",
+    "question": "Team Nova and Team Forge both got new leads at different points. Did Team Atlas ever get a new lead too?",
+    "expected_answer": "No -- Marcus Webb has led Team Atlas continuously since at least the 2023 handbook, and is still listed as Team Atlas lead as recently as the October 2024 all-hands notes and the April 2024 org snapshot. Unlike Nova and Forge, there is no leadership change recorded for Team Atlas anywhere in the dataset.",
+    "requires_facts": [],
+    "resolution_rule": "Tests whether the provider incorrectly infers a leadership change for Team Atlas by pattern-matching against the Nova/Forge transitions, rather than correctly recognizing that no such change exists in any ingested document. Requires checking Team Atlas's lead across multiple time-separated documents (2023 handbook, 2023 Nav Kit spec, 2024 org snapshot, 2024 all-hands) and confirming it never changes. Team Atlas leadership is not tracked as a fact in spec.json precisely because it never changes -- that absence is itself the point of this test.",
+    "source_docs": [
+      "01_employee_handbook_v1_2023-01.md",
+      "03b_product_launch_navkit_2023-09.md",
+      "14_org_snapshot_2024-04.md",
+      "13_allhands_notes_2024-10.md"
+    ]
+  },
+  {
+    "id": "det-mh-007",
+    "type": "multi_hop",
+    "question": "Was the S1 v2 payload correction first made public at the October 2024 all-hands, or was it announced there before the official notice went out?",
+    "expected_answer": "It was previewed internally at the October 22, 2024 all-hands (Derek walked through the correction ahead of the public notice), but the official public errata wasn't posted until November 20, 2024 -- about a month later.",
+    "requires_facts": [
+      "s1_max_payload"
+    ],
+    "resolution_rule": "Requires connecting the all-hands notes (13) with the errata notice (06) and correctly ordering the internal preview before the public announcement, rather than treating the all-hands mention as the official correction date.",
+    "source_docs": [
+      "13_allhands_notes_2024-10.md",
+      "06_errata_s1_v2_2024-11.md"
+    ]
+  },
+  {
+    "id": "det-mh-008",
+    "type": "multi_hop",
+    "question": "The employee handbook's original org chart lists Team Nova's lead as 'TBD.' Who ended up filling that role, and is that still accurate today?",
+    "expected_answer": "Alice Chen was announced as Team Nova's first lead in January 2024, filling the 'TBD' slot from the 2023 handbook. That's no longer current, though -- Bob Okafor succeeded her in March 2025.",
+    "requires_facts": [
+      "nova_lead"
+    ],
+    "resolution_rule": "Requires connecting the original handbook's unfilled 'TBD' listing (01) with the January 2024 announcement that filled it (02), and then correctly recognizing that a later leadership change (04) makes even that answer stale.",
+    "source_docs": [
+      "01_employee_handbook_v1_2023-01.md",
+      "02_announcement_nova_lead_2024-01.md",
+      "04_reorg_memo_2025-03.md"
+    ]
+  }
+]

@@ -1,0 +1,85 @@
+{
+  "persona_id": "persona-05",
+  "persona_name": "Devon R.",
+  "tension_type": "unresolved self-description contradiction",
+  "sessions": [
+    {
+      "session_id": "session_1",
+      "date": "2026-01-20",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Can you help me think through weekend plans? I'm pretty introverted, so nothing too overwhelming — a quiet dinner or a walk sounds ideal."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Sure, a low-key weekend it is. A quiet dinner or a nature walk both sound relaxing."
+        },
+        {
+          "speaker": "user",
+          "text": "Exactly, I need the recharge time."
+        }
+      ]
+    },
+    {
+      "session_id": "session_2",
+      "date": "2026-02-14",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Just got back from my friend's birthday, I ended up being the one DJing and getting everyone dancing until 2am, it was amazing."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Sounds like a great night! Did you know a lot of people there?"
+        },
+        {
+          "speaker": "user",
+          "text": "Half the room, honestly. I love being the center of attention at parties like that."
+        },
+        {
+          "speaker": "user",
+          "text": "Oh, unrelated -- I got my sister's old car last month, a blue Honda Civic."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Nice, congrats on the new (to you) car -- a blue Honda Civic."
+        }
+      ]
+    },
+    {
+      "session_id": "session_3",
+      "date": "2026-03-01",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Help me plan something fun for my birthday next month."
+        },
+        {
+          "speaker": "assistant",
+          "text": "PLACEHOLDER_RESPONSE_TO_EVALUATE"
+        }
+      ]
+    }
+  ],
+  "probe_queries": [
+    "Is Devon introverted or extroverted?",
+    "What kind of birthday plan would Devon enjoy?"
+  ],
+  "needle_probes": [
+    {
+      "question": "What car did Devon get from his sister?",
+      "expected_answer": "a blue Honda Civic"
+    }
+  ],
+  "annotation": {
+    "tension": "Devon explicitly self-labels as introverted and wanting low-key plans in session 1, then describes loving being the life of a large, loud party in session 2. Both are stated with equal confidence and no acknowledgment of tension between them.",
+    "why_unresolved": "People genuinely contain both traits depending on context (recharge alone vs. thrive at a specific kind of social event) — flattening this into a single label is itself a plausible failure mode.",
+    "good_response_looks_like": "Asking what kind of birthday vibe Devon's going for this time, or offering a range that could suit either quiet or high-energy plans, rather than assuming only one trait applies.",
+    "failure_modes_to_watch_for": [
+      "Confidently plans only a quiet, low-key event, discarding the party evidence.",
+      "Confidently plans only a large loud party, discarding the introversion statement.",
+      "Invents a personality explanation not given by the user (e.g., 'Devon is an ambivert who alternates weekly')."
+    ]
+  }
+}

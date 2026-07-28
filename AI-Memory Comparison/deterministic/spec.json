@@ -1,0 +1,70 @@
+{
+  "company": "Solvane Robotics",
+  "fictional_disclaimer": "Solvane Robotics, all people, products, teams and events below are entirely fictional, created for this evaluation.",
+  "facts": [
+    {
+      "fact_id": "nova_lead",
+      "description": "Lead of Team Nova (perception/vision team)",
+      "history": [
+        {"value": "Alice Chen", "effective_date": "2024-01-08", "change_type": "initial", "source_doc": "02_announcement_nova_lead_2024-01.md", "note": "Alice Chen appointed as founding lead of Team Nova."},
+        {"value": "Bob Okafor", "effective_date": "2025-03-03", "change_type": "update", "source_doc": "04_reorg_memo_2025-03.md", "note": "Reorg memo explicitly states Bob Okafor succeeds Alice Chen as Team Nova lead; Alice Chen moves to Principal Engineer (individual contributor, no direct reports)."}
+      ],
+      "correct_as_of": {"2024-06-01": "Alice Chen", "2025-06-01": "Bob Okafor"}
+    },
+    {
+      "fact_id": "forge_lead",
+      "description": "Lead of Team Forge (hardware/manufacturing team)",
+      "history": [
+        {"value": "Sofia Kappler", "effective_date": "2023-01-01", "change_type": "initial", "source_doc": "01_employee_handbook_v1_2023-01.md", "note": "Listed as Team Forge lead in original handbook org chart."},
+        {"value": "Derek Osei", "effective_date": "2024-09-16", "change_type": "update", "source_doc": "07_forge_incident_report_2024-09.md", "note": "Following the S1 payload incident review, Derek Osei was named Team Forge lead; Sofia Kappler moved to Quality Systems Advisor."}
+      ],
+      "correct_as_of": {"2024-03-01": "Sofia Kappler", "2025-01-01": "Derek Osei"}
+    },
+    {
+      "fact_id": "s1_max_payload",
+      "description": "Solvane S1 warehouse picking arm — rated maximum payload",
+      "history": [
+        {"value": "5 kg", "effective_date": "2023-02-14", "change_type": "initial", "source_doc": "03_product_launch_s1_2023-02.md", "note": "Original launch spec sheet."},
+        {"value": "7 kg", "effective_date": "2024-06-03", "change_type": "update", "source_doc": "05_product_update_s1_v2_2024-06.md", "note": "Hardware revision v2 spec sheet states 7 kg max payload."},
+        {"value": "6 kg", "effective_date": "2024-11-20", "change_type": "correction", "source_doc": "06_errata_s1_v2_2024-11.md", "note": "Errata notice: the 7 kg figure was measured under lab-only conditions; real-world rated payload for v2 is corrected to 6 kg. This explicitly supersedes the June 2024 spec sheet, not the original 2023 launch spec."}
+      ],
+      "correct_as_of": {"2023-06-01": "5 kg", "2024-08-01": "7 kg", "2025-06-01": "6 kg"}
+    },
+    {
+      "fact_id": "vision_suite_pricing",
+      "description": "Solvane Vision Suite software — standard pricing model",
+      "history": [
+        {"value": "$499/month flat, individual license", "effective_date": "2023-05-01", "change_type": "initial", "source_doc": "09_vision_suite_pricing_2023-05.md", "note": "Original standard-tier pricing."},
+        {"value": "$150/seat/month, per-seat license (individual tier discontinued)", "effective_date": "2025-01-15", "change_type": "update", "source_doc": "10_vision_suite_pricing_update_2025-01.md", "note": "Announcement explicitly discontinues the flat individual tier in favor of per-seat pricing."}
+      ],
+      "correct_as_of": {"2024-01-01": "$499/month flat, individual license", "2025-06-01": "$150/seat/month, per-seat license"}
+    },
+    {
+      "fact_id": "remote_work_policy",
+      "description": "Company remote work policy",
+      "history": [
+        {"value": "Fully remote, no in-office requirement", "effective_date": "2023-01-01", "change_type": "initial", "source_doc": "01_employee_handbook_v1_2023-01.md", "note": "Original handbook section 4.2."},
+        {"value": "Hybrid: 3 days/week in office (Tue/Wed/Thu)", "effective_date": "2025-02-01", "change_type": "update", "source_doc": "11_handbook_update_hybrid_2025-02.md", "note": "Handbook update explicitly states this section supersedes handbook section 4.2 from the 2023 edition."}
+      ],
+      "correct_as_of": {"2024-01-01": "Fully remote, no in-office requirement", "2025-06-01": "Hybrid: 3 days/week in office (Tue/Wed/Thu)"}
+    },
+    {
+      "fact_id": "meal_expense_cap",
+      "description": "Daily meal expense reimbursement cap",
+      "history": [
+        {"value": "$50/day", "effective_date": "2023-01-01", "change_type": "initial", "source_doc": "01_employee_handbook_v1_2023-01.md", "note": "Original handbook section 7.1."},
+        {"value": "$75/day", "effective_date": "2025-08-01", "change_type": "update", "source_doc": "12_expense_policy_memo_2025-08.md", "note": "Finance memo raises the cap, effective the date of the memo."}
+      ],
+      "correct_as_of": {"2024-01-01": "$50/day", "2025-12-01": "$75/day"}
+    },
+    {
+      "fact_id": "navkit_battery_life",
+      "description": "Solvane Nav Kit (autonomous mobile robot) — battery life",
+      "history": [
+        {"value": "8 hours, standard operating mode", "effective_date": "2023-09-01", "change_type": "initial", "source_doc": "03b_product_launch_navkit_2023-09.md", "note": "Launch spec, standard mode."},
+        {"value": "up to 10 hours in eco mode (not a correction — an additional operating mode, standard mode is still 8 hours)", "effective_date": "2024-10-01", "change_type": "clarifying_addition", "source_doc": "08_navkit_field_report_2024-10.md", "note": "Field report adds a new eco mode figure. This is a trap: it is easy to misread as contradicting the 8-hour spec, but it does not supersede it — both figures are simultaneously true for different modes."}
+      ],
+      "correct_as_of": {"2025-06-01": "8 hours standard mode; up to 10 hours in eco mode (both true, different modes)"}
+    }
+  ]
+}

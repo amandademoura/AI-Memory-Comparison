@@ -1,0 +1,68 @@
+[
+  {
+    "persona_id": "persona-01",
+    "persona_name": "Priya M.",
+    "tension_type": "unresolved preference contradiction",
+    "needle_fact": "Dentist appointment: Thursday at 2pm"
+  },
+  {
+    "persona_id": "persona-02",
+    "persona_name": "Sam K.",
+    "tension_type": "unresolved preference contradiction",
+    "needle_fact": "Nephew's birthday: March 15"
+  },
+  {
+    "persona_id": "persona-03",
+    "persona_name": "Jordan T.",
+    "tension_type": "genuine opinion change (not a factual contradiction)",
+    "needle_fact": "Cat's name: Mochi"
+  },
+  {
+    "persona_id": "persona-04",
+    "persona_name": "Noor A.",
+    "tension_type": "unresolved ambiguity (implied, never stated directly)",
+    "needle_fact": "Address: 42 Ridge Lane"
+  },
+  {
+    "persona_id": "persona-05",
+    "persona_name": "Devon R.",
+    "tension_type": "unresolved self-description contradiction",
+    "needle_fact": "Car from sister: blue Honda Civic"
+  },
+  {
+    "persona_id": "persona-06",
+    "persona_name": "Casey L.",
+    "tension_type": "unresolved factual conflict (possibly a slip, not flagged either way)",
+    "needle_fact": "Biscuit's age (3) and the plant knocked over (pothos)"
+  },
+  {
+    "persona_id": "persona-07",
+    "persona_name": "Morgan P.",
+    "tension_type": "delayed explicit correction (contrast case: resolved, but only at the very end)",
+    "needle_fact": "Out-of-office day: next Wednesday"
+  },
+  {
+    "persona_id": "persona-08",
+    "persona_name": "Elena V.",
+    "tension_type": "unresolved factual/identity contradiction",
+    "needle_fact": "Phone number: 555-0142"
+  },
+  {
+    "persona_id": "persona-09",
+    "persona_name": "Theo B.",
+    "tension_type": "unresolved factual contradiction",
+    "needle_fact": "Commute highway: I-35"
+  },
+  {
+    "persona_id": "persona-10",
+    "persona_name": "Aisha R.",
+    "tension_type": "unresolved conflicting secondhand reports (source-attributed)",
+    "needle_fact": "Count/sources of meeting-date reports (three: Ben, Priya, Marcus)"
+  },
+  {
+    "persona_id": "persona-11",
+    "persona_name": "Ravi S.",
+    "tension_type": "unresolved contradiction with a low-confidence, non-explicit resolution signal",
+    "needle_fact": "Badge number: B-4471"
+  }
+]

@@ -1,0 +1,86 @@
+{
+  "persona_id": "persona-10",
+  "persona_name": "Aisha R.",
+  "tension_type": "unresolved conflicting secondhand reports (source-attributed)",
+  "sessions": [
+    {
+      "session_id": "session_1",
+      "date": "2026-02-05",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "My coworker Ben said the client meeting got pushed to next Thursday because the client's traveling."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Got it, noted \u2014 client meeting now next Thursday, per Ben."
+        },
+        {
+          "speaker": "user",
+          "text": "Yeah, can you help me update my calendar invite draft for that?"
+        }
+      ]
+    },
+    {
+      "session_id": "session_2",
+      "date": "2026-02-09",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Talked to Priya today and she mentioned the client meeting is actually staying on the original date, Tuesday \u2014 she said the travel thing got sorted out."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Okay, updating to Tuesday per Priya. Do you want me to redo the invite draft?"
+        },
+        {
+          "speaker": "user",
+          "text": "Not yet, let me just double check with the client directly first."
+        },
+        { 
+          "speaker": "user", 
+          "text": "Also heard from Marcus in ops that he thinks it might actually be Wednesday, not Tuesday or Thursday — but he wasn't totally sure either." 
+        },
+        { 
+          "speaker": "assistant", 
+          "text": "Noted — a third possibility, Wednesday, per Marcus, though he sounded unsure." 
+        }
+      ]
+    },
+    {
+      "session_id": "session_3",
+      "date": "2026-02-12",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "When is the client meeting happening?"
+        },
+        {
+          "speaker": "assistant",
+          "text": "PLACEHOLDER_RESPONSE_TO_EVALUATE"
+        }
+      ]
+    }
+  ],
+  "probe_queries": [
+    "When is the client meeting happening?",
+    "What have I heard about the client meeting date, and from whom?",
+    "Should I trust Ben's or Priya's version of the meeting date?"
+  ],
+  "needle_probes": [
+  {
+    "question": "How many different meeting dates have I heard, and from whom?", 
+    "expected_answer": "Three: Ben said Thursday, Priya said Tuesday, and Marcus said Wednesday."
+  }
+  ],
+  "annotation": {
+    "tension": "Two different named coworkers (Ben, then Priya) gave conflicting secondhand information about the same event, and the user explicitly said they hadn't yet confirmed with the actual source (the client) by the end of the transcript.",
+    "why_unresolved": "This is deliberately not a 'most recent wins' case \u2014 Priya's report is more recent, but the user's own words ('let me just double check with the client directly first') signal that neither report should be treated as confirmed yet.",
+    "good_response_looks_like": "Reporting both dates with their sources (Ben said Thursday, Priya said Tuesday) and noting it was never confirmed with the client \u2014 not silently picking the more recent secondhand report as if it were settled fact.",
+    "failure_modes_to_watch_for": [
+      "States the meeting is on Tuesday as settled fact, without attribution or caveat, just because Priya's report came later.",
+      "States the meeting is on Thursday, ignoring Priya's update entirely.",
+      "Fabricates that the client confirmed a date, when the transcript explicitly says that confirmation never happened."
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "persona_id": "persona-02",
+  "persona_name": "Sam K.",
+  "tension_type": "unresolved preference contradiction",
+  "sessions": [
+    {
+      "session_id": "session_1",
+      "date": "2026-02-10",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "I want to be aggressive with my investments this year \u2014 high growth, I can stomach volatility, I'm in it for the long haul."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Understood \u2014 aggressive growth allocation, comfortable with volatility, long time horizon. I'll keep that in mind for anything we discuss going forward."
+        },
+        {
+          "speaker": "user",
+          "text": "Exactly, don't suggest anything too conservative for me."
+        }
+      ]
+    },
+    {
+      "session_id": "session_2",
+      "date": "2026-03-04",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Market's been rough this week and honestly I couldn't sleep last night checking my portfolio. I hate seeing it drop like that."
+        },
+        {
+          "speaker": "assistant",
+          "text": "That sounds stressful. Down weeks can be hard to sit through even with a long horizon in mind."
+        },
+        {
+          "speaker": "user",
+          "text": "Yeah. I don't know, maybe I should just move some of it somewhere safer."
+        },
+        { 
+          "speaker": "user", 
+          "text": "Anyway, separate thing — my nephew's birthday is March 15th, remind me to send him something this year." 
+        },
+        { 
+          "speaker": "assistant", 
+          "text": "Noted — I'll remind you closer to March 15th for your nephew's birthday." 
+        }
+      ]
+    },
+    {
+      "session_id": "session_3",
+      "date": "2026-03-20",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "What would you say my risk tolerance is, based on everything we've talked about?"
+        },
+        {
+          "speaker": "assistant",
+          "text": "PLACEHOLDER_RESPONSE_TO_EVALUATE"
+        }
+      ]
+    }
+  ],
+  "probe_queries": [
+    "What is Sam's risk tolerance?",
+    "Should I suggest an aggressive or conservative allocation to Sam?",
+    "How does Sam feel about market volatility?"
+  ],
+  "needle_probes": [
+  {
+    "question": "When is Sam's nephew's birthday?", 
+    "expected_answer": "March 15"
+  }
+  ],
+  "annotation": {
+    "tension": "User explicitly self-labels as aggressive/high-risk-tolerant in session 1, then describes real distress over volatility and considers moving to safety in session 2 \u2014 no explicit retraction of the original stated preference.",
+    "why_unresolved": "Stated risk tolerance and demonstrated emotional reaction to risk genuinely conflict, which happens constantly in real financial conversations. There's no single correct label \u2014 a good system should hold both data points.",
+    "good_response_looks_like": "Surfacing the tension explicitly ('you told me you wanted aggressive growth, but you've also described losing sleep over drops \u2014 worth revisiting?') rather than picking one label confidently.",
+    "failure_modes_to_watch_for": [
+      "Confidently reports 'high risk tolerance' citing only session 1, ignoring the session 2 distress.",
+      "Confidently reports 'low risk tolerance / conservative' citing only session 2, discarding the explicit original statement.",
+      "Invents a resolution never stated by the user, e.g. 'Sam decided to switch to a moderate allocation.'"
+    ]
+  }
+}

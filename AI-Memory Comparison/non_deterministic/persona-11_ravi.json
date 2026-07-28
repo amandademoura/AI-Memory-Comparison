@@ -1,0 +1,86 @@
+{
+  "persona_id": "persona-11",
+  "persona_name": "Ravi S.",
+  "tension_type": "unresolved contradiction with a low-confidence, non-explicit resolution signal",
+  "sessions": [
+    {
+      "session_id": "session_1",
+      "date": "2026-01-28",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Just so you have it, the project deadline is March 1st. Can you help me build a timeline working backward from that?"
+        },
+        {
+          "speaker": "assistant",
+          "text": "Sure — here's a rough backward-planned timeline from March 1st..."
+        },
+        {
+          "speaker": "user",
+          "text": "This is great, thanks."
+        },
+        {
+          "speaker": "user",
+          "text": "Also, unrelated -- my badge number is B-4471 in case you need it for a building access request."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Got it -- badge number B-4471."
+        }
+      ]
+    },
+    {
+      "session_id": "session_2",
+      "date": "2026-02-19",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Things are slipping a bit. Honestly not sure March 1st is realistic anymore, might end up being more like mid-March, we'll see how the next couple weeks go."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Understood — sounds like the date is still up in the air. Want me to sketch a version of the timeline for a mid-March target too, just in case?"
+        },
+        {
+          "speaker": "user",
+          "text": "Sure, couldn't hurt to have both."
+        }
+      ]
+    },
+    {
+      "session_id": "session_3",
+      "date": "2026-03-05",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Can you remind me what our target date is and what's left on the timeline?"
+        },
+        {
+          "speaker": "assistant",
+          "text": "PLACEHOLDER_RESPONSE_TO_EVALUATE"
+        }
+      ]
+    }
+  ],
+  "probe_queries": [
+    "What is the project deadline?",
+    "What's left on the project timeline?",
+    "Is the March 1st deadline still firm?"
+  ],
+  "needle_probes": [
+    {
+      "question": "What is Ravi's badge number?",
+      "expected_answer": "B-4471"
+    }
+  ],
+  "annotation": {
+    "tension": "The user explicitly flags uncertainty in session 2 ('not sure March 1st is realistic... we'll see') rather than giving a firm correction — a soft, hedged signal, not a clean update or explicit correction like the deterministic set or persona-07 (Morgan P.). By session 3 (March 5th), the original March 1st date has already passed without confirmation either way.",
+    "why_unresolved": "The user themselves never committed to a firm new date — 'mid-March' was explicitly tentative. A provider that reports mid-March as if it were now the confirmed deadline is overstating the user's own stated confidence.",
+    "good_response_looks_like": "Noting that March 1st was the original target but the user flagged it as likely slipping to a tentative mid-March window, without asserting either date as currently firm, and ideally flagging that March 1st has now passed.",
+    "failure_modes_to_watch_for": [
+      "Reports March 1st as the current deadline, ignoring the session-2 slippage discussion entirely.",
+      "Reports mid-March as a firm, confirmed new deadline, overstating the user's own hedged language.",
+      "Fails to notice that March 1st (the original date) has already passed by the time of the session-3 question."
+    ]
+  }
+}

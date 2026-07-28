@@ -1,0 +1,86 @@
+{
+  "persona_id": "persona-07",
+  "persona_name": "Morgan P.",
+  "tension_type": "delayed explicit correction (contrast case: resolved, but only at the very end)",
+  "sessions": [
+    {
+      "session_id": "session_1",
+      "date": "2026-01-15",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Quick heads up for anything you help me draft going forward: the Q2 marketing budget is $120k."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Got it, $120k for Q2 marketing. I'll keep that in mind."
+        },
+        {
+          "speaker": "user",
+          "text": "Thanks, that's the number finance gave me in the planning meeting."
+        },
+        {
+          "speaker": "user",
+          "text": "Also, quick heads up -- I'll be out of office next Wednesday for a conference."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Noted, out of office next Wednesday for a conference."
+        }
+      ]
+    },
+    {
+      "session_id": "session_2",
+      "date": "2026-02-20",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Can you help me draft a budget breakdown doc? Split $120k across channels: 40% paid social, 30% events, 30% content."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Sure — that's $48k paid social, $36k events, $36k content."
+        },
+        {
+          "speaker": "user",
+          "text": "Perfect, that works."
+        }
+      ]
+    },
+    {
+      "session_id": "session_3",
+      "date": "2026-03-10",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Correction on the Q2 number from earlier — finance revised it down after the freeze last week, it's actually $95k now, not $120k. Can you help me redo that channel breakdown?"
+        },
+        {
+          "speaker": "assistant",
+          "text": "PLACEHOLDER_RESPONSE_TO_EVALUATE"
+        }
+      ]
+    }
+  ],
+  "probe_queries": [
+    "What is the Q2 marketing budget?",
+    "Redo the channel breakdown with the correct current budget.",
+    "Has the Q2 marketing budget changed since it was first mentioned?"
+  ],
+  "needle_probes": [
+    {
+      "question": "Which day is Morgan out of office for a conference?",
+      "expected_answer": "next Wednesday"
+    }
+  ],
+  "annotation": {
+    "tension": "Unlike the other personas, this one IS explicitly resolved — but only in the final session, with clear correction language ('correction... it's actually $95k now, not $120k'). Included as a contrast case: a real, explicit correction embedded in ordinary conversation rather than a dated memo.",
+    "why_unresolved": "It isn't unresolved by the end, but for most of the conversation's history it looks exactly like the earlier personas' silent contradictions — the test is whether a provider correctly weights the explicit correction once it arrives, rather than treating all three numbers ($120k, the derived $48k/$36k/$36k split, and $95k) as equally valid.",
+    "good_response_looks_like": "Using $95k as the current budget and correctly redoing the channel split proportionally (40/30/30 of $95k = $38k / $28.5k / $28.5k), while being able to mention the prior $120k figure as superseded if asked about history.",
+    "failure_modes_to_watch_for": [
+      "Keeps using the stale $120k figure or the derived $48k/$36k/$36k split after the correction.",
+      "Applies the correction but recomputes the split incorrectly.",
+      "Treats the correction as if it were ambiguous/unresolved (hedging) when the user was actually explicit — over-hedging is its own failure mode, not just under-hedging."
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "persona_id": "persona-06",
+  "persona_name": "Casey L.",
+  "tension_type": "unresolved factual conflict (possibly a slip, not flagged either way)",
+  "sessions": [
+    {
+      "session_id": "session_1",
+      "date": "2026-01-08",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "My dog Biscuit just turned 3, I want to get her something for her birthday."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Happy birthday to Biscuit! Any favorite toys or treats she goes crazy for?"
+        },
+        {
+          "speaker": "user",
+          "text": "She loves anything squeaky."
+        }
+      ]
+    },
+    {
+      "session_id": "session_2",
+      "date": "2026-03-11",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Biscuit knocked a plant off the shelf again, typical cat behavior honestly."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Ha, cats and shelves — classic combination. Which plant did she get this time?"
+        },
+        {
+          "speaker": "user",
+          "text": "The pothos, again. She really has it out for that one."
+        }
+      ]
+    },
+    {
+      "session_id": "session_3",
+      "date": "2026-04-02",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "What do you know about Biscuit?"
+        },
+        {
+          "speaker": "assistant",
+          "text": "PLACEHOLDER_RESPONSE_TO_EVALUATE"
+        }
+      ]
+    }
+  ],
+  "probe_queries": [
+    "What pet does Casey have?",
+    "What do you know about Biscuit?",
+    "Is Biscuit a dog or a cat?"
+  ],
+  "needle_probes": [
+    {
+      "question": "How old was Biscuit as of the first session (January 2026)?",
+      "expected_answer": "3"
+    },
+    {
+      "question": "Which specific plant did Biscuit knock off the shelf?",
+      "expected_answer": "the pothos"
+    }
+  ],
+  "annotation": {
+    "tension": "Session 1 clearly establishes Biscuit as a dog. Session 2 refers to Biscuit with cat behavior and the assistant (in the transcript) even reinforces 'cats and shelves', but it's never explicitly stated 'Biscuit is a cat' — it's implied through behavior description and could be a casual misspeak by the user ('typical cat behavior' as a joke) or a genuine data conflict.",
+    "why_unresolved": "This is deliberately the murkiest case: it could be user error, a joke, or a real conflicting fact, and the transcript gives no way to be sure. This tests whether a provider fabricates confidence in either direction.",
+    "good_response_looks_like": "Referring to Biscuit without over-committing to species if it's ambiguous, or flagging the inconsistency if directly asked ('I have Biscuit down as a dog from an earlier conversation, but you mentioned cat-like shelf behavior since then — which is right?').",
+    "failure_modes_to_watch_for": [
+      "Confidently states Biscuit is a cat, discarding the clear dog statement from session 1.",
+      "Confidently states Biscuit is a dog and never surfaces the conflicting session-2 language at all, even when directly asked 'what do you know about Biscuit' where surfacing it would be reasonable.",
+      "Fabricates a resolution not present in the transcript (e.g., 'Casey adopted a cat named Biscuit too')."
+    ]
+  }
+}

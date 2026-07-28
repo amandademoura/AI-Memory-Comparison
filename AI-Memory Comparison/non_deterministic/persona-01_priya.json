@@ -1,0 +1,86 @@
+{
+  "persona_id": "persona-01",
+  "persona_name": "Priya M.",
+  "tension_type": "unresolved preference contradiction",
+  "sessions": [
+    {
+      "session_id": "session_1",
+      "date": "2026-01-05",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Hey, I'm trying to plan meals for the week. Quick context: I'm vegetarian, so keep suggestions meat-free."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Got it — vegetarian meal plan. Here's a week of options: chickpea curry, mushroom risotto, paneer tikka, lentil soup, veggie stir-fry, caprese pasta, and a black bean bowl."
+        },
+        {
+          "speaker": "user",
+          "text": "Perfect, save that. I'll probably ask you to build on this list later."
+        },
+        {
+          "speaker": "user",
+          "text": "Oh, separate thing -- my dentist appointment got moved to Thursday at 2pm, in case you need to help me shuffle anything else that day."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Got it -- dentist appointment Thursday at 2pm."
+        }
+      ]
+    },
+    {
+      "session_id": "session_2",
+      "date": "2026-01-19",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Ugh, long day. Went out with the team last night and ended up getting the ribeye at that steakhouse downtown, it was so good."
+        },
+        {
+          "speaker": "assistant",
+          "text": "Sounds like a great night out! How'd the rest of the dinner go?"
+        },
+        {
+          "speaker": "user",
+          "text": "Really good, actually. Anyway, can you remind me what my meal plan looked like from a couple weeks ago?"
+        }
+      ]
+    },
+    {
+      "session_id": "session_3",
+      "date": "2026-02-02",
+      "turns": [
+        {
+          "speaker": "user",
+          "text": "Can you suggest three new dinner ideas for this week based on what you know about me?"
+        },
+        {
+          "speaker": "assistant",
+          "text": "PLACEHOLDER_RESPONSE_TO_EVALUATE"
+        }
+      ]
+    }
+  ],
+  "probe_queries": [
+    "What are Priya's dietary preferences?",
+    "Suggest three new dinner ideas for this week based on what you know about me.",
+    "Is Priya vegetarian?"
+  ],
+  "needle_probes": [
+    {
+      "question": "What day and time is Priya's dentist appointment?",
+      "expected_answer": "Thursday at 2pm"
+    }
+  ],
+  "annotation": {
+    "tension": "User explicitly states vegetarian in session 1, then casually mentions eating ribeye steak in session 2, with zero acknowledgment of the shift and no correction language ('actually I stopped being vegetarian' etc).",
+    "why_unresolved": "Real users are inconsistent this way without flagging it themselves. There's no signal telling you which statement should win — it could be an exception, a lapsed diet, or the original statement was aspirational rather than strict.",
+    "good_response_looks_like": "Suggesting mostly vegetarian options while noting the steak dinner rather than ignoring it, or asking a light clarifying question ('still keeping meals veggie, or open to meat now too?') rather than confidently picking one.",
+    "failure_modes_to_watch_for": [
+      "Confidently states Priya is vegetarian and suggests only veggie meals, silently dropping the steak mention entirely (over-trusting the earlier explicit statement).",
+      "Confidently suggests steak/meat dishes, treating the one mention as if it overrides the explicit vegetarian statement.",
+      "Hallucinates a reconciling explanation the user never gave (e.g. 'since you mentioned you're pescatarian now...')."
+    ]
+  }
+}
